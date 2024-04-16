@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Halls</title>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+<h1>Halls</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Hall Name</th>
+        <th>Description</th>
+        <th>Equipment</th>
+        <th>Class Schedule</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="hall : ${hallsList}">
+        <td th:text="${hall.id}"></td>
+        <td th:text="${hall.hallName}"></td>
+        <td th:text="${hall.description}"></td>
+        <td th:text="${hall.equipment}"></td>
+        <td th:text="${hall.classSchedule}"></td>
+    </tr>
+    </tbody>
+</table>
+<a href="/halls/create">Create New Hall</a>
+</body>
+</html>

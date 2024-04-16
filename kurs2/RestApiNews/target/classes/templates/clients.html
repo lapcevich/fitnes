@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Clients</title>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+<h1>Clients</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Birth Date</th>
+        <th>Phone Number</th>
+        <th>Email</th>
+        <th>Subscription Type</th>
+        <th>Subscription Start Date</th>
+        <th>Subscription End Date</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="client : ${clientsList}">
+        <td th:text="${client.id}"></td>
+        <td th:text="${client.firstName}"></td>
+        <td th:text="${client.lastName}"></td>
+        <td th:text="${client.birthDate}"></td>
+        <td th:text="${client.phoneNumber}"></td>
+        <td th:text="${client.email}"></td>
+        <td th:text="${client.subscriptionType}"></td>
+        <td th:text="${client.subscriptionStartDate}"></td>
+        <td th:text="${client.subscriptionEndDate}"></td>
+    </tr>
+    </tbody>
+</table>
+<a href="/clients/create">Create New Client</a>
+</body>
+</html>
