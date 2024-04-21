@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Create Hall</title>
+    <meta charset="UTF-8"/>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-4">
+    <h1 class="text-center">Create New Hall</h1>
+    <form action="#" th:action="@{/halls/create}" th:object="${hall}" method="post">
+        <div class="form-group">
+            <label for="hallName">Hall Name</label>
+            <input type="text" th:field="*{hallName}" class="form-control" id="hallName">
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea th:field="*{description}" class="form-control" id="description"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="equipment">Equipment</label>
+            <input type="text" th:field="*{equipment}" class="form-control" id="equipment">
+        </div>
+        <div class="form-group">
+            <label for="classSchedule">Class Schedule</label>
+            <input type="text" th:field="*{classSchedule}" class="form-control" id="classSchedule">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
