@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Update Section</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/styles.css}">
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+            var id = document.getElementById('sectionId').value;
+            window.location.href = '/sections/update/' + id;
+        }
+    </script>
+</head>
+<body>
+<div class="container">
+    <h1>Select section</h1>
+    <form onsubmit="submitForm(event)">
+        <div class="form-group">
+            <label for="sectionId">Enter Section ID:</label>
+            <input type="text" id="sectionId" required>
+        </div>
+        <button type="submit" class="button">Updata</button>
+        <a href="/sections" class="back-button">Back</a>
+    </form>
+</div>
+</body>
+</html>

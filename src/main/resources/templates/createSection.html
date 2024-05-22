@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Create New Section</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/styles.css}">
+    <meta charset="UTF-8"/>
+</head>
+<body>
+<div class="container">
+    <h1>Create New Section</h1>
+    <form action="#" th:action="@{/sections/create}" th:object="${section}" method="post">
+        <div class="form-group">
+            <label for="sectionName">Section name</label>
+            <input type="text" th:field="*{sectionName}" id="sectionName" required>
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea th:field="*{description}" id="description" required></textarea>
+        </div>
+        <button type="submit">Submit</button>
+        <a href="/sections" class="back-button">Back</a>
+    </form>
+</div>
+</body>
+</html>

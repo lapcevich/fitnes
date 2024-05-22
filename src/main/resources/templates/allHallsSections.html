@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All Halls Sections</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+          crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" th:href="@{/styles.css}">
+</head>
+<body>
+<div class="container mt-5">
+    <h1>All Halls Sections</h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Hall Name</th>
+            <th scope="col">Section Name</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Loop through all halls sections and display their information -->
+        <tr th:each="hallSection : ${allHallsSections}">
+            <td th:text="${hallSection.hallName}"></td>
+            <td th:text="${hallSection.sectionName}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <a href="/sections" class="back-button">Back</a>
+</div>
+</body>
+</html>

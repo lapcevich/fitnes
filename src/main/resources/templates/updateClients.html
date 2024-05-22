@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Update Client</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/styles.css}">
+    <meta charset="UTF-8"/>
+</head>
+<body>
+<div class="container">
+    <h1>Update Client</h1>
+    <form th:action="@{/clients/update/{id}(id=${clients.id})}" th:object="${clients}" method="post">
+        <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" th:field="*{firstName}" id="firstName" placeholder="Enter first name" required>
+        </div>
+        <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" th:field="*{lastName}" id="lastName" placeholder="Enter last name" required>
+        </div>
+        <div class="form-group">
+            <label for="birthDate">Birth Date</label>
+            <input type="date" th:field="*{birthDate}" id="birthDate" placeholder="Enter birth date" required>
+        </div>
+        <div class="form-group">
+            <label for="phoneNumber">Phone Number</label>
+            <input type="text" th:field="*{phoneNumber}" id="phoneNumber" placeholder="Enter phone number">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" th:field="*{email}" id="email" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+            <label for="subscriptionType">Subscription Type</label>
+            <input type="text" th:field="*{subscriptionType}" id="subscriptionType" placeholder="Enter subscription type">
+        </div>
+        <div class="form-group">
+            <label for="subscriptionStartDate">Subscription Start Date</label>
+            <input type="date" th:field="*{subscriptionStartDate}" id="subscriptionStartDate" placeholder="Enter subscription start date">
+        </div>
+        <div class="form-group">
+            <label for="subscriptionEndDate">Subscription End Date</label>
+            <input type="date" th:field="*{subscriptionEndDate}" id="subscriptionEndDate" placeholder="Enter subscription end date">
+        </div>
+        <button type="submit">Update</button>
+    </form>
+</div>
+</body>
+</html>
