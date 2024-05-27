@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Update Clients</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/styles.css}">
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+            var id = document.getElementById('clientsId').value;
+            window.location.href = '/clients/update/' + id;
+        }
+    </script>
+</head>
+<body>
+<div class="container">
+    <h1>Select Clients</h1>
+    <form onsubmit="submitForm(event)">
+        <div class="form-group">
+            <label for="clientsId">Enter client ID:</label>
+            <input type="text" id="clientsId" required>
+        </div>
+        <button type="submit" class="button">Update</button>
+        <a href="/clients" class="back-button">Back</a>
+    </form>
+
+</div>
+</body>
+</html>
