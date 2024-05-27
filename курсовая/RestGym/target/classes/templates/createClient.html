@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Create New Client</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/styles.css}">
+    <meta charset="UTF-8"/>
+</head>
+<body>
+<div class="container">
+    <h1>Create New Client</h1>
+    <form th:action="@{/clients/create}" th:object="${client}" method="post">
+        <div class="form-group">
+            <label for="firstName">Name:</label>
+            <input type="text" id="firstName" th:field="*{firstName}" placeholder="Введите имя" required>
+        </div>
+        <div class="form-group">
+            <label for="lastName">Surname:</label>
+            <input type="text" id="lastName" th:field="*{lastName}" placeholder="Введите фамилию" required>
+        </div>
+        <div class="form-group">
+            <label for="birthDate">Date of Birth:</label>
+            <input type="date" id="birthDate" th:field="*{birthDate}" placeholder="Введите дату рождения" required>
+        </div>
+        <div class="form-group">
+            <label for="phoneNumber">Phone number:</label>
+            <input type="tel" id="phoneNumber" th:field="*{phoneNumber}" placeholder="Введите номер телефона"required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" th:field="*{email}" placeholder="Введите email" required>
+        </div>
+        <div class="form-group">
+            <label for="subscriptionType">Subscription type:</label>
+            <input type="text" id="subscriptionType" th:field="*{subscriptionType}" placeholder="Введите тип подписки" required>
+        </div>
+        <div class="form-group">
+            <label for="subscriptionStartDate">Subscription start date:</label>
+            <input type="date" id="subscriptionStartDate" th:field="*{subscriptionStartDate}" placeholder="Введите дату начала подписки"required>
+        </div>
+        <div class="form-group">
+            <label for="subscriptionEndDate">Subscription end Date:</label>
+            <input type="date" id="subscriptionEndDate" th:field="*{subscriptionEndDate}" placeholder="Введите дату окончания подписки"required>
+        </div>
+        <button type="submit">Submit</button>
+        <a href="/clients" class="back-button">Back</a>
+    </form>
+</div>
+</body>
+</html>

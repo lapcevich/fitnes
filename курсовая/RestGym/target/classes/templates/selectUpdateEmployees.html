@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Update Employee</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/styles.css}">
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+            var id = document.getElementById('employeeId').value;
+            window.location.href = '/employees/update/' + id;
+        }
+    </script>
+</head>
+<body>
+<div class="container">
+    <h1>Select Employee</h1>
+    <form onsubmit="submitForm(event)">
+        <div class="form-group">
+            <label for="employeeId">Enter employee ID:</label>
+            <input type="text" id="employeeId" required>
+        </div>
+        <button type="submit" class="button">Updata</button>
+        <a href="/employees" class="back-button">Back</a>
+    </form>
+
+</div>
+</body>
+</html>

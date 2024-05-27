@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Employees</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/styles.css}">
+    <meta charset="UTF-8"/>
+</head>
+<body>
+<div class="container">
+    <h1>Employees</h1>
+    <h2>Total Employees: <span th:text="${employeesCount}">0</span></h2>
+
+    <form action="/employees/search" method="get" class="search-form">
+        <input type="text" name="name" placeholder="Search for employees">
+        <input type="submit" value="Search">
+    </form>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Position</th>
+            <th>Contact Info</th>
+            <th>Work Schedule</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="employee : ${employeesList}">
+            <td th:text="${employee.id}"></td>
+            <td th:text="${employee.firstName}"></td>
+            <td th:text="${employee.lastName}"></td>
+            <td th:text="${employee.position}"></td>
+            <td th:text="${employee.contactInfo}"></td>
+            <td th:text="${employee.workSchedule}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <div th:if="${isAdmin}" class="button-container">
+    <a href="/employees/create">Create New Employee</a>
+    <a href="/employees/delete">Delete Employee</a>
+    <a href="/employees/update">Update Employee</a>
+
+</div>
+    <a href="/">Home</a>
+</div>
+</body>
+</html>

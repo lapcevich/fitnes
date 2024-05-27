@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Delete Hall</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/styles.css}">
+    <meta charset="UTF-8"/>
+</head>
+<body>
+<div class="container">
+    <h1>Select the hall to delete</h1>
+    <form th:action="@{/halls/delete}" method="post">
+        <div class="form-group">
+            <label for="id">Enter  hall ID:</label>
+            <input type="text" id="id" th:name="id"placeholder="ID">
+        </div>
+        <button type="submit">Delete hall</button>
+        <a href="/halls" class="back-button">Back</a>
+    </form>
+
+</div>
+</body>
+</html>

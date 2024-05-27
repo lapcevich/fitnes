@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Sections</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/styles.css}">
+    <meta charset="UTF-8"/>
+</head>
+<body>
+<div class="container">
+    <h1>Sections</h1>
+    <h2>Total section: <span th:text="${sectionsCount}">0</span></h2>
+
+
+    <form action="/sections/search" method="get" class="search-form">
+        <input type="text" name="name" placeholder="Search for sections">
+        <input type="submit" value="Search">
+    </form>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Section Name</th>
+            <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="section : ${sectionList}">
+            <td th:text="${section.id}"></td>
+            <td th:text="${section.sectionName}"></td>
+            <td th:text="${section.description}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <div th:if="${isAdmin}" class="button-container">
+    <a href="/sections/create">Create New Section</a>
+    <a href="/sections/delete">Delete Sections</a>
+    <a href="/sections/update">Update Sections</a>
+        <a href="/manageHalls">Manage Halls</a>
+
+</div>
+    <a href="/">Home</a>
+    <a href="/allHallsSections">allHallsSections</a>
+</div>
+</body>
+</html>

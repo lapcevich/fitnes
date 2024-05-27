@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Delete Section</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/styles.css}">
+    <meta charset="UTF-8"/>
+</head>
+<body>
+<div class="container">
+    <h1>Select the section to delete</h1>
+    <form th:action="@{/sections/delete}" method="post">
+        <div class="form-group">
+            <label for="id">Enter section ID:</label>
+            <input type="text" id="id" th:name="id" placeholder="ID">
+        </div>
+        <button type="submit">Delete section</button>
+        <a href="/sections" class="back-button">Back</a>
+    </form>
+</div>
+</body>
+</html>
